@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: apache-service
+  namespace: apache 
+spec:
+  selector:
+      app: apache
+  ports:
+    - protocol: TCP
+      port: 80        # EXPOSED PORT IN CLUSTER 
+      targetPort: 80  # IT IS CONTAINER'S PORT
+  type: ClusterIP 

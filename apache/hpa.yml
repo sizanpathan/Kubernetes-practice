@@ -1,0 +1,29 @@
+kind: HorizontalPodAutoscaler         # THIS WILL BE THE KIND FOR (HPA)
+apiVersion: autoscaling/v2           # API VERSION FOR (HPA) 
+metadata:
+  name: apache-hpa
+  namespace: apache
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: apache-deployment 
+    apiVersion: apps/v1
+
+  minReplicas: 1
+  maxReplicas: 3
+
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 5       # THIS HPA WILL KEEP AVERAGE CPU USAGE TO 5% ACROSS ALL PODS 
+
+
+
+
+
+
+ #  IF CPU USAGE GOES ABOVE 5% ----> SCALE OUT (ADD MORE PODS)
+ #  IF CPU USAGE GOES BELOW 5% ----> SCALE IN  (REMOVE PODS)
