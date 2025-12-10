@@ -1,0 +1,10 @@
+kind: DevOpsPractice
+apiVersion: devops.sizan.io/v1
+metadata:
+  name: sizan-khan 
+  namespace: default
+spec:
+  name: "DevOps practice of CRD"
+  duration: "1 week"
+  platform: "AWS"
+  mode: "hybrid as always" 
