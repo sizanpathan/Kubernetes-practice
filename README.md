@@ -55,3 +55,11 @@ istioctl install -f samples/bookinfo/demo-profile-no-gateways.yaml -y
 # Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application later
 kubectl label namespace default istio-injection=enabled
 ```
+# 📌 **AWS CLI Installation Commands*
+```bash
+sudo apt-get install unzip
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
+```
