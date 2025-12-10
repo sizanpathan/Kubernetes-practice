@@ -1,3 +1,15 @@
+# 🐳 **DOCKER — Installation Commands**
+
+---
+
+```bash
+curl -fsSL https://get.docker.com -o install-docker.sh
+sudo sh install-docker.sh
+sudo usermod -aG docker ubuntu
+newgrp docker
+docker --version
+docker ps
+```
 
 ---
 
