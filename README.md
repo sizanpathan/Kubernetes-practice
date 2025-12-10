@@ -45,5 +45,14 @@ docker --version
 kind create cluster --config kind-cluster.yml --name my-cluster
 kubectl get nodes
 ```
-
-
+# 🛠️ **Istio Installation*
+```bash
+# TO DOWNLAD ISTIO FILE
+curl -L https://istio.io/downloadIstio | sh -
+cd istio-1.28.1/bin
+sudo cp istioctl /usr/local/bin
+# Install Istio using the demo profile, without any gateways
+istioctl install -f samples/bookinfo/demo-profile-no-gateways.yaml -y
+# Add a namespace label to instruct Istio to automatically inject Envoy sidecar proxies when you deploy your application later
+kubectl label namespace default istio-injection=enabled
+```
