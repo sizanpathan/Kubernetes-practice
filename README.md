@@ -36,7 +36,6 @@ kubectl version --client
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 kind version
-kubectl version --client
 docker --version
 ```
 # ☸️ **Cluster Creation**
