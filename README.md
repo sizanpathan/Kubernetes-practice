@@ -12,3 +12,26 @@ kubectl version --client
 
 ```
 
+# 🚀 **KIND — Creation & Cluster Creation**
+
+---
+# 🔧 1️⃣ **Kind Installations**
+```bash
+# For AMD64 / x86_64
+[ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.30.0/kind-linux-amd64
+# For ARM64
+[ $(uname -m) = aarch64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.30.0/kind-linux-arm64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind
+kind version
+kubectl version --client
+docker --version
+```
+# ☸️ **Cluster Creation**
+```bash
+# Create conig file kind-cluster.yml
+kind create cluster --config kind-cluster.yml --name my-cluster
+kubectl get nodes
+```
+
+
